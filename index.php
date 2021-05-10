@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,10 +38,10 @@
     }).addTo(mymap);
 
     var polygon = L.polygon([
-    [-2.306079, 102.719121],
-    [-2.304941, 102.719979],
-    [-2.304361, 102.719239],
-    [-2.305435, 102.718585]
+                  [-2.306079, 102.719121],
+                  [-2.304941, 102.719979],
+                  [-2.304361, 102.719239],
+                  [-2.305435, 102.718585]
     ]).addTo(mymap);
 
     marker.bindPopup("Masjid Al-Falah").openPopup();
@@ -62,8 +61,6 @@
             .setContent("You clicked the map at " + e.latlng.toString())
             .openOn(mymap);
     }
-
     mymap.on('click', onMapClick);
 </script>
-
 </html>
