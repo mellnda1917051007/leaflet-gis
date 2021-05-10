@@ -12,7 +12,6 @@
     </style>
     <title>Document</title>
 </head>
-
 <body>
     <div id= "mapid"></div>
     <iframe src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.647721185406!2d102.71853122915245!3d-2.3047251598748337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2e2c1f4b0a080f%3A0x425663cfa2f45c18!2sLapangan%20Sriwijaya%2C%20Simpang%20Tiga%2C%20Sarolangun%2C%20Jambi!5e0!3m2!1sid!2sid!4v1620621142209!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -30,25 +29,26 @@
         accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
     }).addTo(mymap);
 
-    var marker = L.marker([-2.302812, 102.724035]).addTo(mymap);
+    var marker = L.marker([-2.302812, 102.724035]).addTo(mymap); 
 
     var circle = L.circle([-2.313706, 102.750835], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
         radius: 500
-    }).addTo(mymap);
+    }).addTo(mymap); //lingkaran
 
     var polygon = L.polygon([
                   [-2.306079, 102.719121],
                   [-2.304941, 102.719979],
                   [-2.304361, 102.719239],
                   [-2.305435, 102.718585]
-    ]).addTo(mymap);
+    ]).addTo(mymap); //polygon
 
     marker.bindPopup("Masjid Al-Falah").openPopup();
     circle.bindPopup("Sarolangun");
     polygon.bindPopup("Lapangan Sriwijaya");
+    //menampilkan info pada object yang di klik
 
     var popup = L.popup()
         .setLatLng([-2.302812, 102.724035])
@@ -63,6 +63,7 @@
             .setContent("You clicked the map at " + e.latlng.toString())
             .openOn(mymap);
     }
-    mymap.on('click', onMapClick);
+    mymap.on('click', onMapClick); //menampilkan data coordinat saat di klik
+    
 </script>
 </html>
